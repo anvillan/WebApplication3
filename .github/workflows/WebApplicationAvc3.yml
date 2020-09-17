@@ -10,12 +10,13 @@ env:
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 3.1.x
   PROJECT_PATH: WebApplication3
+  SOME_VAR: my var with spaces 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core SDK ${{ env.DOTNET_CORE_VERSION }}
+    - name: Setup .NET Core SDK "${{ env.SOME_VAR }}"
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
