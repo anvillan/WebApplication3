@@ -9,13 +9,13 @@ env:
   AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.WEBAPPLICATIONAVC3_PUBLISH_PROFILE }}
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 3.1.x
-  PROJECT_PATH: WebApplication3\My App\src
+  PROJECT_PATH: WebApplication3
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core SDK "${{ env.SOME_VAR }}"
+    - name: Setup .NET Core SDK "${{ env.DOTNET_CORE_VERSION }}"
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
